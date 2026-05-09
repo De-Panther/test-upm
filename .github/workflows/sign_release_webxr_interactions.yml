@@ -93,6 +93,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           prerelease: true
+          tag_name: webxr-interactions/${{ env.PACKAGE_VERSION }}
           name: ${{ steps.release_data.outputs.name }}
           body: ${{ steps.release_data.outputs.body }}
           files: |
