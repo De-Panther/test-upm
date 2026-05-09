@@ -1,4 +1,4 @@
-name: WebXR Interactions Sign and release
+name: WebXR Export Sign and release
 
 on:
   workflow_dispatch:
@@ -15,10 +15,10 @@ jobs:
       UPM_SERVICE_ACCOUNT_KEY_SECRET: ${{ secrets.UPM_SERVICE_ACCOUNT_KEY_SECRET }}
       UPM_ORG_ID: ${{ secrets.UPM_ORG_ID }}
       DIST_DIR: /tmp/signed-upm-dist
-      PACKAGE_PATH: Packages/webxr-interactions
-      PACKAGE_TITLE: WebXR Interactions
-      RELEASE_NOTE: "You can import the package from OpenUPM at [WebXR Interactions](https://openupm.com/packages/com.de-panther.webxr-interactions/)."
-      TAG_PREFIX: webxr-interactions
+      PACKAGE_PATH: Packages/webxr
+      PACKAGE_TITLE: WebXR Export
+      RELEASE_NOTE: "You can import the package from OpenUPM at [WebXR Export](https://openupm.com/packages/com.de-panther.webxr/)."
+      TAG_PREFIX: webxr
 
     steps:
       - name: Check out repository
