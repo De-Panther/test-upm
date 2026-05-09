@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Read package metadata
         run: |
@@ -56,12 +56,12 @@ jobs:
           fi
 
           archive="${archives[0]}"
-          tar -tzf "$archive" | grep -qx '$PACKAGE_PATH/package.json'
-          tar -tzf "$archive" | grep -qx '$PACKAGE_PATH/.attestation.p7m'
+          tar -tzf "$archive" | grep -qx 'package/package.json'
+          tar -tzf "$archive" | grep -qx 'package/.attestation.p7m'
 
           echo "PACKAGE_ARCHIVE=$archive" >> "$GITHUB_ENV"
           printf 'Archive: %s\n' "$(basename "$archive")"
-          tar -xOzf "$archive" $PACKAGE_PATH/package.json | jq '{name, version}'
+          tar -xOzf "$archive" package/package.json | jq '{name, version}'
 
       - name: Generate release data
         id: release_data
