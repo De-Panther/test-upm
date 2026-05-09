@@ -1,4 +1,4 @@
-name: Sign and release
+name: WebXR Interactions Sign and release
 
 on:
   push:
