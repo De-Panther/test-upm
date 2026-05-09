@@ -41,7 +41,7 @@ jobs:
 
           echo "Checking tag: $tag"
 
-          if git rev-parse -q --verify "refs/tags/$tag" >/dev/null; then
+          if git ls-remote --tags origin "refs/tags/$tag" | grep -q .; then
             echo "::error ::Tag already exists: $tag"
             exit 1
           fi
