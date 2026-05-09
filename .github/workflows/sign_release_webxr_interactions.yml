@@ -73,10 +73,10 @@ jobs:
           BODY=$(
             awk '
               NR >= 10 {
-                if ($0 ~ /^## [/) exit
+                if ($0 ~ /^## \[/) exit
                 print
               }
-            ' $PACKAGE_PATH/CHANGELOG.md
+            ' "$PACKAGE_PATH/CHANGELOG.md"
           )
           
           {
